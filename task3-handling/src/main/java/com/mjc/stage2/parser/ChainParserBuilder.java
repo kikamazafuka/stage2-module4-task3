@@ -7,6 +7,8 @@ public class ChainParserBuilder {
     private List<AbstractTextParser> parsers = new ArrayList<>();
 
     public ChainParserBuilder() {
+        throw new UnsupportedOperationException("ChainParserBuilder constructor is not intended for use without parsers." +
+                " Use setParser method to add parsers.");
     }
 
     public ChainParserBuilder setParser(AbstractTextParser abstractTextParser) {
@@ -16,7 +18,6 @@ public class ChainParserBuilder {
     }
 
     public AbstractTextParser build() {
-
         for (int i = 0; i < parsers.size() - 1; i++) {
             parsers.get(i).setNextParser(parsers.get(i + 1));
         }

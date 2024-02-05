@@ -7,14 +7,10 @@ import com.mjc.stage2.event.RectangleEvent;
 import com.mjc.stage2.warehouse.RectangleWarehouse;
 
 public class RectangleObserver implements Observer {
-    private RectangleWarehouse rectangleWarehouse;
 
     public RectangleObserver() {
     }
 
-    public RectangleObserver(RectangleWarehouse rectangleWarehouse) {
-        this.rectangleWarehouse = rectangleWarehouse;
-    }
 
     @Override
     public void handleEvent(RectangleEvent event) {
