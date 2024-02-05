@@ -7,8 +7,7 @@ public class ChainParserBuilder {
     private List<AbstractTextParser> parsers = new ArrayList<>();
 
     public ChainParserBuilder() {
-        throw new UnsupportedOperationException("ChainParserBuilder constructor is not intended for use without parsers." +
-                " Use setParser method to add parsers.");
+        // This constructor intentionally left empty. The builder relies on the setParser method to add parsers.
     }
 
     public ChainParserBuilder setParser(AbstractTextParser abstractTextParser) {

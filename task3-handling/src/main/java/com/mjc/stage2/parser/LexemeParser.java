@@ -35,7 +35,4 @@ public class LexemeParser extends AbstractTextParser {
     public static String getWordRegex() {
         return WORD_REGEX;
     }
-    // Write your code here!
-
-
 }
