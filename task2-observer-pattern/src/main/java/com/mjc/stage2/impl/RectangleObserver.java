@@ -9,12 +9,16 @@ import com.mjc.stage2.warehouse.RectangleWarehouse;
 public class RectangleObserver implements Observer {
     private RectangleWarehouse rectangleWarehouse;
 
+    public RectangleObserver() {
+    }
+
     public RectangleObserver(RectangleWarehouse rectangleWarehouse) {
         this.rectangleWarehouse = rectangleWarehouse;
     }
 
     @Override
     public void handleEvent(RectangleEvent event) {
+        RectangleWarehouse rectangleWarehouse = RectangleWarehouse.getInstance();
         Rectangle rectangle = event.getSource();
         int rectangleId = rectangle.getId();
         double sideA = rectangle.getSideA();
@@ -23,6 +27,5 @@ public class RectangleObserver implements Observer {
         double perimeter = 2 * (sideA + sideB);
         RectangleValues rectangleValues = new RectangleValues(square,perimeter);
         rectangleWarehouse.put(rectangleId, rectangleValues);
-
     }
 }
